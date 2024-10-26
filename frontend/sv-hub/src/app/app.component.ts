@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import "src/app/services/structs"
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -28,6 +29,7 @@ export class AppComponent {
     }
   ]
 
-  constructor() {
+  constructor(public router: Router) {
+    console.log(router.url)
   }
 }

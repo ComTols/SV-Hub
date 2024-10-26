@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-split-pane contentId="main-content">
+  <ion-split-pane *ngIf="router.url !== '/login'" contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
@@ -60,4 +60,5 @@
       </div>
     </div>
   </ion-split-pane>
+  <ion-router-outlet *ngIf="router.url === '/login'" id="login"></ion-router-outlet>
 </ion-app>
