@@ -1,3 +1,3 @@
 Backend-ReadMe
 
-![SearchImage](./assets/SearchImage.png)
+![SearchImage](backend/assets/SearchImage.png)
