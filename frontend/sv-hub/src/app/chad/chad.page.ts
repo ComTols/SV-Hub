@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-chad',
   templateUrl: './chad.page.html',
   styleUrls: ['./chad.page.scss'],
 })
-export class ChadPage {
+export class ChadPage implements OnInit {
 
   data: Post = {
     id: "1234",
@@ -15,7 +16,17 @@ export class ChadPage {
     numberOfComments: 4
   }
 
-  constructor() {
+  id: string | null = null;
+  subhub: SubHub = {
+    id: "",
+    title: "4YOU"
+  }
+
+  constructor(private route: ActivatedRoute) {
+  }
+
+  ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('id')
   }
 
 }

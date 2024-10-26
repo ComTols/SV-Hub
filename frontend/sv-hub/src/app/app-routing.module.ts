@@ -13,6 +13,9 @@ const routes: Routes = [
   }, {
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+  }, {
+    path: "subhub/:id",
+    loadChildren: () => import('./chad/chad.module').then(m => m.ChadPageModule)
   }
 ];
 

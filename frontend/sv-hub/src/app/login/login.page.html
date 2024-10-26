@@ -1,36 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Login</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
 
-<div class="column">
-  <div class="center-container">
-    <ion-input
-      type="input"
-      shape="round"
-      labelPlacement="stacked"
-      fill="outline"
-      class="login"
-      label="Benutzername">
-    </ion-input>
-    <ion-input
-      type="password"
-      shape="round"
-      labelPlacement="stacked"
-      fill="outline"
-      class="login"
-      label="Passwort">
-      <ion-input-password-toggle slot="end"></ion-input-password-toggle>
-    </ion-input>
-    <ion-button shape="round">Login</ion-button>
+  <div class="column">
+    <div class="center-container">
+      <ion-input
+        type="input"
+        shape="round"
+        labelPlacement="stacked"
+        fill="outline"
+        class="login"
+        label="Benutzername">
+      </ion-input>
+      <ion-input
+        type="password"
+        shape="round"
+        labelPlacement="stacked"
+        fill="outline"
+        class="login"
+        label="Passwort">
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+      <ion-button shape="round" [routerLink]="['/chad']">Login</ion-button>
+    </div>
   </div>
-</div>
+</ion-content>

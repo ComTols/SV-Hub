@@ -23,6 +23,13 @@
               </div>
             </ion-accordion>
           </ion-accordion-group>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerDirection="root" [routerLink]="['/subhub/add']" lines="none" detail="false"
+                      routerLinkActive="selected">
+              <ion-icon aria-hidden="true" slot="start" ios="add-outline" md="add-sharp"></ion-icon>
+              <ion-label>Neuer SubHub</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-list>
 
         <ion-list id="labels-list">
@@ -53,9 +60,6 @@
                       class="rounded-input"></ion-textarea>
         <ion-button fill="clear" size="large">
           <ion-icon slot="icon-only" name="search"></ion-icon>
-        </ion-button>
-        <ion-button fill="clear" size="large">
-          <ion-icon slot="icon-only" name="add-circle"></ion-icon>
         </ion-button>
       </div>
     </div>
