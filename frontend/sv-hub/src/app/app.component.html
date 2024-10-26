@@ -25,16 +25,19 @@
         </ion-list>
       </ion-content>
     </ion-menu>
-    <div class="column">
 
+    <div class="floating-button">
+      <ion-menu-button></ion-menu-button>
+    </div>
+    <div class="column">
       <div class="content">
         <ion-router-outlet id="main-content"></ion-router-outlet>
       </div>
       <div class="footer">
       <ion-textarea shape="round" label-placement="none" fill="outline" placeholder="Enter text"
                  class="rounded-input"></ion-textarea>
-        <ion-button size="large">
-          <ion-icon slot="icon-only" ios="logo-apple" md="settings-sharp"></ion-icon>
+        <ion-button fill="clear" size="large">
+          <ion-icon slot="icon-only" name="send"></ion-icon>
         </ion-button>
       </div>
     </div>

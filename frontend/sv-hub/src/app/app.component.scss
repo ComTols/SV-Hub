@@ -129,6 +129,16 @@ ion-item.selected {
   height: 100%;
 }
 
+.floating-button {
+  position: absolute;
+  top: 0.3em;
+  left: 0.5em;
+  height: 2em;
+  width: 2em;
+  z-index: 100;
+  transform: scale(1.5);
+}
+
 .column {
   flex-grow: 1;
   display: flex;

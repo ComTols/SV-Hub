@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ChadPageRoutingModule } from './chad-routing.module';
 
 import { ChadPage } from './chad.page';
+import {PostComponent} from "../components/post/post.component";
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { ChadPage } from './chad.page';
     IonicModule,
     ChadPageRoutingModule
   ],
-  declarations: [ChadPage]
+  declarations: [ChadPage, PostComponent]
 })
 export class ChadPageModule {}
