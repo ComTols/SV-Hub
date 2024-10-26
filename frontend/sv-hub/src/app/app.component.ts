@@ -1,18 +1,33 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import "src/app/services/structs"
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  public appPages = [
-    { title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/spam', icon: 'warning' },
+  public settings = [
+    {title: 'Nachrichten', url: '/settings/messages', icon: 'mail'},
+    {title: 'Account', url: '/settings/account', icon: 'person-circle'},
+    {title: 'Einstellungen', url: '/settings/settings', icon: 'settings'},
+    {title: 'Verlauf', url: '/settings/history', icon: 'archive'},
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+
+  public hubs: HubSpace[] = [
+    {
+      title: "Space",
+      hubs: [
+        {
+          id: "1234",
+          title: "SubHub Eins"
+        }
+
+      ]
+    }
+  ]
+
+  constructor() {
+  }
 }

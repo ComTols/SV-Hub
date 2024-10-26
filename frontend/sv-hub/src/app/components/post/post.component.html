@@ -6,44 +6,25 @@
         <h2>r/Subforum</h2>
         <p>u/User</p>
       </ion-label>
-      <h2>Sachen machen!!!</h2>
+      <h2>{{ data?.title }}</h2>
 
       <div class="content">
-        <p>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-          mmmmmmmmmmmmmmmm<br>
-        </p>
-        <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png">
+        <markdown [data]="data?.content"></markdown>
       </div>
 
       <div class="footer">
-        <ion-button fill="clear">
+        <ion-button fill="clear" (click)="clickComment.emit(data)">
           <ion-icon slot="icon-only" name="chatbubble-ellipses"></ion-icon>
+          {{ data?.numberOfComments }}
         </ion-button>
 
-        <ion-button fill="clear">
+        <ion-button fill="clear" (click)="clickReport.emit(data)">
           <ion-icon slot="icon-only" name="flag"></ion-icon>
         </ion-button>
 
         <span class="spacer"></span>
 
-        <ion-button fill="clear">
+        <ion-button fill="clear" (click)="clickRepost.emit(data)">
           <ion-icon slot="icon-only" name="repeat"></ion-icon>
         </ion-button>
       </div>
@@ -51,11 +32,11 @@
     </div>
 
     <div class="vote">
-      <ion-button fill="clear">
+      <ion-button fill="clear" (click)="clickUpvote.emit(data)">
         <ion-icon slot="icon-only" name="add"></ion-icon>
       </ion-button>
-      <ion-chip disabled>5 Aura</ion-chip>
-      <ion-button fill="clear">
+      <ion-chip disabled>{{ data?.aura }} Aura</ion-chip>
+      <ion-button fill="clear" (click)="clickDownvote.emit(data)">
         <ion-icon slot="icon-only" name="remove"></ion-icon>
       </ion-button>
     </div>

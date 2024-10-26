@@ -2,9 +2,13 @@
   height: 3em;
   display: flex;
   align-items: center;
-  padding-left: 3em;
+  padding: 0 0.5em 0 3em;
 
   img {
     height: 2em;
+  }
+
+  .space {
+    flex-grow: 1;
   }
 }

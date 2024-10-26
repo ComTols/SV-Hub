@@ -1,7 +1,16 @@
 <ion-content [fullscreen]="true">
   <div class="spacer">
     <img src="assets/icon/chad.ico">
+    <ion-chip>4YOU</ion-chip>
+    <span class="space"></span>
+    <ion-button [routerLink]="['/new']">Neuer Post</ion-button>
   </div>
 
-  <app-post></app-post>
+  <div class="divided">
+    <app-post [data]="data"></app-post>
+    <div class="right">
+
+    </div>
+  </div>
+
 </ion-content>
