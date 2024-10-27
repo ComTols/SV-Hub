@@ -1,0 +1,38 @@
+.center-container {
+  display: flex;
+  justify-content: center; /* Horizontal zentrieren */
+  align-items: center; /* Vertikal zentrieren */
+  height: 25vh; /* Die volle Höhe des Viewports nutzen */
+  flex-grow: 0.1;
+  flex-direction: column;
+}
+
+.login {
+  margin: 2em;
+  max-width: 20em;
+  border-radius: 12px;
+  flex-grow: 1;
+}
+
+.column {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+ion-button {
+  width: 50%; /* Setze die Breite auf 50% */
+  max-width: 10em; /* Maximale Breite für den Button */
+  margin: 1em 0; /* Optional: Vertikaler Abstand */
+  border-radius: 12px; /* Gleiche Rundung wie die Eingabefelder */
+}
+
+.error-text {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}

@@ -1,0 +1,27 @@
+<ion-content [fullscreen]="true">
+  <div class="column">
+    <div class="center-container">
+      <ion-input
+        type="text"
+        shape="round"
+        labelPlacement="stacked"
+        fill="outline"
+        class="login"
+        label="Benutzername"
+        [(ngModel)]="username">
+      </ion-input>
+      <ion-input
+        type="password"
+        shape="round"
+        labelPlacement="stacked"
+        fill="outline"
+        class="login"
+        label="Passwort"
+        [(ngModel)]="password">
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+      <ion-button shape="round" (click)="onLogin()">Login</ion-button>
+      <p *ngIf="loginError" class="error-text">Benutzername oder Passwort ist falsch.</p>
+    </div>
+  </div>
+</ion-content>

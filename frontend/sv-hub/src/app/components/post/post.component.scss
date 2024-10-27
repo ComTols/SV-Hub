@@ -1,0 +1,82 @@
+.wrapper {
+  padding: 0.5em;
+
+  .avatar {
+    height: 2.5em;
+    width: 2.5em;
+  }
+
+  .content-wrapper {
+    margin-left: 1em;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    ion-label {
+      h2 {
+        font-size: .8em;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: .8em;
+      }
+    }
+
+    .content {
+      flex-grow: 1;
+      font-size: .875rem;
+      user-select: text;
+    }
+
+    .footer {
+      display: flex;
+    }
+  }
+
+  h2 {
+    font-size: 1.125rem;
+  }
+
+  .vote {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    min-width: max-content;
+  }
+}
+
+.colum-flex {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.row-flex {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.comments {
+  margin-left: 3.5em;
+  display: flex;
+  flex-direction: column;
+
+  .row {
+    display: flex;
+  }
+
+  ion-textarea {
+    flex-grow: 1;
+  }
+
+  app-post {
+    margin-top: 1em;
+  }
+}

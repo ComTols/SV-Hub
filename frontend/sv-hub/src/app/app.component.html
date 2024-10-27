@@ -1,0 +1,68 @@
+<ion-app>
+  <ion-split-pane *ngIf="router.url !== '/login'" contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-list-header>Max Mustermann</ion-list-header>
+          <ion-note>max.mustermann&#64;test.com</ion-note>
+
+          <ion-accordion-group>
+            <ion-accordion *ngFor="let hub of hubs">
+              <ion-item slot="header" color="light">
+                <ion-icon slot="start" name="megaphone"></ion-icon>
+                <ion-label>{{ hub.title }}</ion-label>
+              </ion-item>
+              <div slot="content">
+                <ion-menu-toggle auto-hide="false" *ngFor="let subHub of hub.hubs">
+                  <ion-item routerDirection="root" [routerLink]="['/subhub/' + subHub.id]" lines="none" detail="false"
+                            routerLinkActive="selected">
+                    <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+                    <ion-label>{{ subHub.title }}</ion-label>
+                  </ion-item>
+                </ion-menu-toggle>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerDirection="root" [routerLink]="['/subhub/add']" lines="none" detail="false"
+                      routerLinkActive="selected">
+              <ion-icon aria-hidden="true" slot="start" ios="add-outline" md="add-sharp"></ion-icon>
+              <ion-label>Neuer SubHub</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+        <ion-list id="labels-list">
+          <ion-list-header>Weiteres</ion-list-header>
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let setting of settings">
+
+            <ion-item routerDirection="root" [routerLink]="[setting.url]" lines="none" detail="false"
+                      routerLinkActive="selected">
+              <ion-icon aria-hidden="true" slot="start" [ios]="setting.icon + '-outline'"
+                        [md]="setting.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ setting.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <div class="floating-button">
+      <ion-menu-button></ion-menu-button>
+    </div>
+    <div class="column">
+      <div class="content">
+        <ion-router-outlet id="main-content"></ion-router-outlet>
+      </div>
+      <div class="footer">
+        <ion-textarea shape="round" label-placement="none" fill="outline" placeholder="Frag Chad"
+                      class="rounded-input"></ion-textarea>
+        <ion-button fill="clear" size="large">
+          <ion-icon slot="icon-only" name="search"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </ion-split-pane>
+  <ion-router-outlet *ngIf="router.url === '/login'" id="login"></ion-router-outlet>
+</ion-app>

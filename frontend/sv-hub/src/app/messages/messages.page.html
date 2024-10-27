@@ -1,0 +1,26 @@
+<div class="chat-list" *ngIf="!selectedChat">
+  <h3>Chats</h3>
+  <div *ngFor="let chat of chats" (click)="selectChat(chat)" class="chat-item">
+    <p><strong>{{ chat.user }}</strong></p>
+    <p *ngIf="chat.unreadCount > 0" class="unread-count">{{ chat.unreadCount }} new messages</p>
+  </div>
+</div>
+
+<div class="chat-detail" *ngIf="selectedChat">
+  <button (click)="selectedChat = null">Back to Chats</button>
+
+  <div class="messages">
+    <div *ngFor="let message of selectedChat.messages"
+         [class.unread]="!message.isRead && message.sender !== currentUser">
+      <p [class.sent]="message.sender === currentUser">
+        <strong>{{ message.sender }}:</strong> {{ message.content }}
+      </p>
+      <span class="timestamp">{{ message.timestamp | date:'shortTime' }}</span>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <input [(ngModel)]="newMessage" placeholder="Type a message..." />
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div>

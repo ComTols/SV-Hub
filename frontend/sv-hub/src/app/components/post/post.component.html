@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <div class="row-flex">
+    <img class="avatar" src="assets/icon/favicon.png">
+    <div class="content-wrapper">
+      <ion-label>
+        <h2>r/Subforum</h2>
+        <p>u/User</p>
+      </ion-label>
+      <h2>{{ data?.title }}</h2>
+
+      <div class="content">
+        <markdown [data]="data?.content"></markdown>
+      </div>
+
+      <div class="footer">
+        <ion-button fill="clear" (click)="onClickComment()">
+          <ion-icon slot="icon-only" name="chatbubble-ellipses"></ion-icon>
+          {{ data?.numberOfComments }}
+        </ion-button>
+
+        <ion-button fill="clear" (click)="clickReport.emit({element: elementRef, data: data})">
+          <ion-icon slot="icon-only" name="flag"></ion-icon>
+        </ion-button>
+
+        <span class="spacer"></span>
+
+        <ion-button fill="clear" (click)="clickRepost.emit({element: elementRef, data: data})">
+          <ion-icon slot="icon-only" name="repeat"></ion-icon>
+        </ion-button>
+      </div>
+
+    </div>
+
+    <div class="vote">
+      <ion-button fill="clear" (click)="clickUpvote.emit({element: elementRef, data: data})">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+      <ion-chip disabled>{{ data?.aura }} Aura</ion-chip>
+      <ion-button fill="clear" (click)="clickDownvote.emit({element: elementRef, data: data})">
+        <ion-icon slot="icon-only" name="remove"></ion-icon>
+      </ion-button>
+    </div>
+
+  </div>
+
+  <div *ngIf="commentsOpen" class="comments">
+    <div class="row">
+      <ion-textarea label="Kommentar" labelPlacement="floating" fill="outline" autoGrow="true">
+      </ion-textarea>
+      <ion-button fill="clear">
+        <ion-icon slot="icon-only" name="send"></ion-icon>
+      </ion-button>
+    </div>
+    <app-post *ngFor="let comment of data?.comments" [data]="comment"></app-post>
+  </div>
+
+</div>

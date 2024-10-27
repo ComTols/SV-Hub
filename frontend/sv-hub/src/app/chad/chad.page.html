@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true">
+  <div class="spacer">
+    <img src="assets/icon/chad.ico">
+    <ion-chip>{{ subhub.title }}</ion-chip>
+    <span class="space"></span>
+    <ion-button [routerLink]="['/new']">Neuer Post</ion-button>
+  </div>
+
+  <div class="divided">
+    <app-post [data]="data" (clickComment)="onClickComment($event)"></app-post>
+    <div class="comment"></div>
+    <div class="right">
+
+    </div>
+  </div>
+
+</ion-content>
+
+<ng-template #writeComment>
+
+</ng-template>
