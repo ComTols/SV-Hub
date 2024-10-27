@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  username: string = '';
+  password: string = '';
+  loginError: boolean = false;
 
-  ngOnInit() {
+  constructor(private router: Router) { } // Injektieren des Routers
+
+  ngOnInit() {}
+
+  onLogin() {
+    // Beispielhafter Check: Benutzername und Passwort prüfen
+    if (this.username === 'test' && this.password === 'test') {
+      // Leitet den Benutzer weiter, wenn die Anmeldung erfolgreich ist
+      this.loginError = false;
+      this.router.navigate(['/chad']); // Navigiert zur /chad-Seite
+    } else {
+      // Zeigt eine Fehlermeldung an, wenn die Anmeldung fehlschlägt
+      this.loginError = true;
+    }
   }
-
 }
