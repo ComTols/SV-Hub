@@ -1,0 +1,29 @@
+2024-10-27 06:25:22.80093 -- 400 -- POST /post     152.0408ms 
+2024-10-27 06:44:05.89445 -- 400 -- POST /registration       9.6097ms 
+2024-10-27 06:51:59.04189 -- 201 -- POST /post     39.245224s 
+2024-10-27 06:53:15.58456 -- 201 -- POST /post    44.9851128s 
+2024-10-27 06:56:10.41280 -- 201 -- POST /post    21.5731661s 
+2024-10-27 07:02:29.67700 -- 201 -- POST /post  2m36.9894347s 
+2024-10-27 07:08:36.31903 -- 405 -- GET / query=Tolle+Programmiersprachen      5.7223ms 
+2024-10-27 07:08:45.51172 -- 405 -- GET /seqrch query=Tolle+Programmiersprachen      3.2203ms 
+2024-10-27 07:08:48.04886 -- 405 -- GET /seqarch query=Tolle+Programmiersprachen      3.9673ms 
+2024-10-27 07:08:52.62524 -- 400 -- GET /search query=Tolle+Programmiersprachen      2.7414ms 
+2024-10-27 07:08:58.20679 -- 400 -- GET /search query%3ATolle+Programmiersprachen      3.8955ms 
+2024-10-27 07:09:09.44621 -- 500 -- GET /search question=Tolle+Programmiersprachen    2.7753579s 
+2024-10-27 07:16:49.64577 -- 500 -- GET /search question=Tolle+Programmiersprachen   14.1867546s 
+2024-10-27 07:19:06.79110 -- 500 -- GET /search question=Tolle+Programmiersprachen    901.3582ms 
+2024-10-27 07:19:52.94098 -- 500 -- GET /search question=Tolle+Programmiersprachen    535.1227ms 
+2024-10-27 07:20:32.50834 -- 500 -- GET /search question=Tolle+Programmiersprachen    1.5580159s 
+2024-10-27 09:22:56.24975 -- 500 -- GET /search question=Tolle+Programmiersprachen     56.3551ms 
+2024-10-27 09:29:35.90345 -- 200 -- GET /search question=Tolle+Programmiersprachen   12.1660866s 
+2024-10-27 09:32:19.74951 -- 200 -- GET /search question=Tolle+Programmiersprachen    4.2061648s 
+2024-10-27 09:33:45.40759 -- 200 -- GET /search question=Tolle+Programmiersprachen    3.1946951s 
+2024-10-27 09:34:58.32500 -- 200 -- GET /search question=Golden    8.1720897s 
+2024-10-27 09:36:05.38524 -- 201 -- POST /post     6.0955575s 
+2024-10-27 09:37:36.66908 -- 201 -- POST /post     6.0386682s 
+2024-10-27 09:39:33.85448 -- 201 -- POST /post     6.0858648s 
+2024-10-27 09:43:51.12932 -- 200 -- GET /search question=flammen   21.8542842s 
+2024-10-27 09:46:33.60872 -- 200 -- GET /search question=schwert    9.0018785s 
+2024-10-27 09:50:07.74832 -- 200 -- GET /search question=schwert   17.2395847s 
+2024-10-27 09:52:31.22629 -- 200 -- GET /search question=Wie+kann+man+wissen+erlangen%3F   14.3863971s 
+2024-10-27 09:55:59.28720 -- 201 -- POST /post     6.0956613s 
