@@ -27,6 +27,7 @@
     "@capacitor/keyboard": "6.0.2",
     "@capacitor/status-bar": "6.0.1",
     "@ionic/angular": "^8.0.0",
+    "axios": "^1.7.7",
     "ionicons": "^7.0.0",
     "marked": "^12.0.2",
     "ngx-markdown": "^18.1.0",

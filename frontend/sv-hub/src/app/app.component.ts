@@ -13,6 +13,7 @@ export class AppComponent {
     {title: 'Account', url: '/settings/account', icon: 'person-circle'},
     {title: 'Einstellungen', url: '/settings/settings', icon: 'settings'},
     {title: 'Verlauf', url: '/settings/history', icon: 'archive'},
+    {title: 'Transkript', url: '/transcribe', icon: 'pencil'},
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 

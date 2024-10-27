@@ -1,4 +1,5 @@
 import {NgModule} from '@angular/core';
+import {authGuard} from "./services/auth.guard";
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
@@ -26,7 +27,13 @@ const routes: Routes = [
   },
   {
     path: 'account',
-    loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
+    loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule),
+    canActivate: [authGuard]
+  },
+  {
+    path: 'transcribe',
+    loadChildren: () => import('./transcribe/transcribe.module').then( m => m.TranscribePageModule),
+    canActivate: [authGuard]
   }
 ];
 @NgModule({

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Transcription</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Upload File</ion-label>
+    <input type="file" (change)="onFileSelected($event)" />
+  </ion-item>
+
+  <ion-button expand="full" (click)="uploadFile()">Hochladen und Transkribieren</ion-button>
+
+  <ion-card *ngIf="transcription">
+    <ion-card-header>
+      <ion-card-title>Transcription</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ transcription }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
