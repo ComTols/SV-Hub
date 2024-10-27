@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="userData">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ userData.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Email: {{ userData.email }}</p>
+      <p>Username: {{ userData.username }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
