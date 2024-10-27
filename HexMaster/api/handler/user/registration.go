@@ -62,6 +62,7 @@ func Registration(ctx *fiber.Ctx) error {
 		return nil
 
 	}
+	res.Access = true
 	user.Token = token
 	res.Content = user
 	res.Send(200)

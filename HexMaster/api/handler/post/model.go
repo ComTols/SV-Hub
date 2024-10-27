@@ -1,16 +1,20 @@
 package post
 
-import "HexMaster/api/handler/group"
+import (
+	"HexMaster/api/handler/group"
+	"encoding/json"
+)
 
 type Post struct {
-	Id        string       `json:"id" db:"id"`
-	CreatedAt string       `json:"created-at" db:"createdAt"`
-	Creator   group.Member `json:"creator" db:"creator"`
-	Group     group.Group  `json:"group" db:"group"`
-	Title     string       `json:"title" db:"title"`
-	Content   string       `json:"content" db:"content"`
-	Type      ContentType  `json:"type" db:"type"`
-	Parent    string       `json:"parent" db:"parent"`
+	Id        string          `json:"id" db:"id"`
+	CreatedAt string          `json:"created-at" db:"createdAt"`
+	Creator   group.Member    `json:"creator" db:"creator"`
+	Group     group.Group     `json:"group" db:"group"`
+	Title     string          `json:"title" db:"title"`
+	Content   string          `json:"content" db:"content"`
+	Type      ContentType     `json:"type" db:"type"`
+	Parent    string          `json:"parent" db:"parent"`
+	Children  json.RawMessage `json:"children" db:"Posts"`
 }
 
 type ContentType string

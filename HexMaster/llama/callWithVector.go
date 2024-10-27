@@ -42,10 +42,10 @@ func DoRequestWithVectors(relatedTags []string, prompt, class string) (string, e
 		if err != nil {
 			return "", fmt.Errorf("Fehler beim Abrufen der vektorisierten Daten für Tag %s: %v", tag, err)
 		}
-
+		fmt.Println("Result:", result.Data)
 		documents := result.Data["Get"].(map[string]interface{})[class].([]interface{})
 		for _, doc := range documents {
-			allVectors = append(allVectors, doc.(map[string]interface{}))
+			allVectors = append(allVectors, doc.(map[string]interface{})["text"])
 		}
 	}
 

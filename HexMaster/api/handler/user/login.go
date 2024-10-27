@@ -59,6 +59,7 @@ func Login(ctx *fiber.Ctx) error {
 	}
 	users[0].Token = token
 	res.Content = users[0]
+	res.Access = true
 	res.Send(200)
 	return nil
 }

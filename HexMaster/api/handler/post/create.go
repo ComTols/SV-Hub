@@ -48,7 +48,7 @@ func Create(ctx *fiber.Ctx) error {
 			return nil
 		}
 
-		post.Id, err = database.Insert("INSERT INTO posts (creator,`group`,title,content,type,parent) VALUES (?,?,?,?,?,?,?)", "id", usr.Id, grp.Id, post.Title, post.Content, post.Type, post.Parent)
+		post.Id, err = database.Insert("INSERT INTO posts (creator,`group`,title,content,type,parent) VALUES (?,?,?,?,?,?)", "id", usr.Id, grp.Id, post.Title, post.Content, post.Type, post.Parent)
 		if err != nil {
 			res.Msg = response.MSG_DEFAULT
 			res.AddError("INSERT ERROR ERROR")
@@ -70,8 +70,8 @@ func Create(ctx *fiber.Ctx) error {
 		if len(lis) < 2 {
 			res.Msg = "Indexing for search failed"
 			res.AddError("Llama response has wrong format")
-			res.Send(fiber.StatusCreated)
-			return nil
+			//res.Send(fiber.StatusCreated)
+			//return nil
 		}
 		weaviate.InsertData(lis, "posts", post.Id)
 	}
