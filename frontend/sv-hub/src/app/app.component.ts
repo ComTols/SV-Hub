@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 })
 export class AppComponent {
   public settings = [
-    {title: 'Nachrichten', url: '/settings/messages', icon: 'mail'},
+    {title: 'Nachrichten', url: '/messages', icon: 'mail'},
     {title: 'Account', url: '/settings/account', icon: 'person-circle'},
     {title: 'Einstellungen', url: '/settings/settings', icon: 'settings'},
     {title: 'Verlauf', url: '/settings/history', icon: 'archive'},

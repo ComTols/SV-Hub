@@ -16,7 +16,11 @@ const routes: Routes = [
   }, {
     path: "subhub/:id",
     loadChildren: () => import('./chad/chad.module').then(m => m.ChadPageModule)
+  },  {
+    path: 'messages',
+    loadChildren: () => import('./messages/messages.module').then( m => m.MessagesPageModule)
   }
+
 ];
 
 @NgModule({
