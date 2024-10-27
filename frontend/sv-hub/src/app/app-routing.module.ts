@@ -21,7 +21,8 @@ const routes: Routes = [
   },
   {
     path: 'messages',
-    loadChildren: () => import('./messages/messages.module').then( m => m.MessagesPageModule)
+    loadChildren: () => import('./messages/messages.module').then( m => m.MessagesPageModule),
+    canActivate: [authGuard]
   }
 ];
 @NgModule({
