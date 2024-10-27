@@ -44,17 +44,6 @@ export class ChadPage implements OnInit {
   }
 
   onClickComment(event: { element: ElementRef, data: Post }) {
-    console.log(this.commentTemplate)
-
-    // Erstelle einen ViewContainer für das Template
-    const embeddedView = this.viewContainerRef.createEmbeddedView(this.commentTemplate);
-
-    // Hole das native Element des Host-Containers
-    const templateElement = embeddedView.rootNodes[0];
-
-    // Füge das Template nach dem Ziel-Element ein
-    const parentNode = event.element.nativeElement.parentNode;
-    this.renderer.insertBefore(parentNode, templateElement, event.element.nativeElement.nextSibling);
 
   }
 }
