@@ -30,3 +30,9 @@ ion-button {
   margin: 1em 0; /* Optional: Vertikaler Abstand */
   border-radius: 12px; /* Gleiche Rundung wie die Eingabefelder */
 }
+
+.error-text {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
