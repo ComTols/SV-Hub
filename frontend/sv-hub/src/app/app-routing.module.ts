@@ -1,4 +1,5 @@
 import {NgModule} from '@angular/core';
+import { authGuard } from './services/auth.guard';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
@@ -9,16 +10,17 @@ const routes: Routes = [
   },
   {
     path: 'chad',
-    loadChildren: () => import('./chad/chad.module').then(m => m.ChadPageModule)
+    loadChildren: () => import('./chad/chad.module').then(m => m.ChadPageModule),
+    canActivate: [authGuard]
   }, {
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   }, {
     path: "subhub/:id",
-    loadChildren: () => import('./chad/chad.module').then(m => m.ChadPageModule)
+    loadChildren: () => import('./chad/chad.module').then(m => m.ChadPageModule),
+    canActivate: [authGuard]
   }
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})
