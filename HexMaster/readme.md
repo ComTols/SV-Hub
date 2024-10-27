@@ -17,3 +17,7 @@ The project is organized as follows:
 - `database/`: Contains the SQL-Database connection and generic query methods.
 - `llama`: Http client for Llama3 REST-API.
 - `weaviate` Vector creation and storing.
+
+## MariaDB
+Due to the small size and requirements of the POC, we have opted for an sql-based database.
+![Database](assets/SVHub.png)
