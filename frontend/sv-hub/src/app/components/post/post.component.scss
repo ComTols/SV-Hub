@@ -62,3 +62,21 @@
 .spacer {
   flex-grow: 1;
 }
+
+.comments {
+  margin-left: 3.5em;
+  display: flex;
+  flex-direction: column;
+
+  .row {
+    display: flex;
+  }
+
+  ion-textarea {
+    flex-grow: 1;
+  }
+
+  app-post {
+    margin-top: 1em;
+  }
+}

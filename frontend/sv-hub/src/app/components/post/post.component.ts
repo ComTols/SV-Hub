@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-post',
@@ -8,6 +8,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class PostComponent {
 
   @Input() data: Post | null = null
+  @Input() commentsOpen: boolean = false
 
   @Output() clickComment = new EventEmitter()
   @Output() clickUpvote = new EventEmitter()
@@ -15,7 +16,13 @@ export class PostComponent {
   @Output() clickReport = new EventEmitter()
   @Output() clickRepost = new EventEmitter()
 
-  constructor() {
+  constructor(protected elementRef: ElementRef) {
+  }
+
+  onClickComment() {
+    this.clickComment.emit({element: this.elementRef, data: this.data})
+
+    this.commentsOpen = !this.commentsOpen
   }
 
 }

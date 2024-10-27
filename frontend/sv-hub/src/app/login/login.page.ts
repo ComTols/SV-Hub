@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -12,19 +13,22 @@ export class LoginPage implements OnInit {
   password: string = '';
   loginError: boolean = false;
 
-  constructor(private router: Router) { } // Injektieren des Routers
+  constructor(private router: Router, private auth: AuthService) {
+  } // Injektieren des Routers
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   onLogin() {
-    // Beispielhafter Check: Benutzername und Passwort prüfen
-    if (this.username === 'test' && this.password === 'test') {
-      // Leitet den Benutzer weiter, wenn die Anmeldung erfolgreich ist
-      this.loginError = false;
-      this.router.navigate(['/chad']); // Navigiert zur /chad-Seite
-    } else {
-      // Zeigt eine Fehlermeldung an, wenn die Anmeldung fehlschlägt
-      this.loginError = true;
-    }
+    this.auth.login(this.username, this.password).then(r => {
+      if (r) {
+        // Leitet den Benutzer weiter, wenn die Anmeldung erfolgreich ist
+        this.loginError = false;
+        this.router.navigate(['/chad']); // Navigiert zur /chad-Seite
+      } else {
+        this.loginError = true;
+
+      }
+    })
   }
 }

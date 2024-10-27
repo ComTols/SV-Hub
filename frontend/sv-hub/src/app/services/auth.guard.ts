@@ -1,16 +1,16 @@
-import { CanActivateFn } from '@angular/router';
-import { inject } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from './auth.service'; // AuthService importieren
+import {CanActivateFn} from '@angular/router';
+import {inject} from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthService} from './auth.service'; // AuthService importieren
 
-export const authGuard: CanActivateFn = (route, state) => {
+export const authGuard: CanActivateFn = async (route, state) => {
   const authService = inject(AuthService);
   const router = inject(Router);
 
-  if (authService.isAuthenticated()) {
-    return true; // Zugriff erlauben, wenn der Benutzer authentifiziert ist
+  if (await authService.isAuthenticated()) {
+    return true
   } else {
-    router.navigate(['/login']); // Umleitung zur Login-Seite, wenn nicht authentifiziert
-    return false; // Zugriff verweigern
+    router.navigate(["/login"]).then()
+    return false
   }
 };

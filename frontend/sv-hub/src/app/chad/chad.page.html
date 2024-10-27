@@ -7,10 +7,15 @@
   </div>
 
   <div class="divided">
-    <app-post [data]="data"></app-post>
+    <app-post [data]="data" (clickComment)="onClickComment($event)"></app-post>
+    <div class="comment"></div>
     <div class="right">
 
     </div>
   </div>
 
 </ion-content>
+
+<ng-template #writeComment>
+
+</ng-template>

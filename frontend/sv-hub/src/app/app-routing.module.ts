@@ -22,20 +22,21 @@ const routes: Routes = [
   },
   {
     path: 'messages',
-    loadChildren: () => import('./messages/messages.module').then( m => m.MessagesPageModule),
+    loadChildren: () => import('./messages/messages.module').then(m => m.MessagesPageModule),
     canActivate: [authGuard]
   },
   {
     path: 'account',
-    loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule),
+    loadChildren: () => import('./account/account.module').then(m => m.AccountPageModule),
     canActivate: [authGuard]
   },
   {
     path: 'transcribe',
-    loadChildren: () => import('./transcribe/transcribe.module').then( m => m.TranscribePageModule),
+    loadChildren: () => import('./transcribe/transcribe.module').then(m => m.TranscribePageModule),
     canActivate: [authGuard]
   }
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})
